@@ -1,0 +1,7 @@
+[Exposed=Window]
+interface AudioContext : BaseAudioContext {
+    constructor (optional AudioContextOptions contextOptions = {});
+    Promise<undefined> resume ();
+    Promise<undefined> suspend ();
+    Promise<undefined> close ();
+};

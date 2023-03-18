@@ -445,6 +445,8 @@ set(SOURCES
     URL/URL.cpp
     URL/URLSearchParams.cpp
     URL/URLSearchParamsIterator.cpp
+    WebAudio/BaseAudioContext.cpp
+    WebAudio/AudioContext.cpp
     WebAssembly/Instance.cpp
     WebAssembly/Memory.cpp
     WebAssembly/Module.cpp

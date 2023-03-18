@@ -481,6 +481,11 @@ class Resource;
 class ResourceLoader;
 }
 
+namespace Web::WebAudio {
+class BaseAudioContext;
+class AudioContext;
+}
+
 namespace Web::WebAssembly {
 class Instance;
 class Memory;
