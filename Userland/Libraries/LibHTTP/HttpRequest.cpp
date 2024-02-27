@@ -50,9 +50,9 @@ ErrorOr<ByteBuffer> HttpRequest::to_raw_request() const
     TRY(builder.try_append(method_name()));
     TRY(builder.try_append(' '));
     // NOTE: The percent_encode is so that e.g. spaces are properly encoded.
-    auto path = m_url.serialize_path();
+    auto path = m_url.serialize_path(URL::ApplyPercentDecoding::No);
     VERIFY(!path.is_empty());
-    TRY(builder.try_append(URL::percent_encode(path, URL::PercentEncodeSet::EncodeURI)));
+    TRY(builder.try_append(URL::percent_encode(path, URL::PercentEncodeSet::Path)));
     if (m_url.query().has_value()) {
         TRY(builder.try_append('?'));
         TRY(builder.try_append(*m_url.query()));
